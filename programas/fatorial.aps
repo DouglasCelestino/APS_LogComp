@@ -1,0 +1,17 @@
+FUNCAO INT fatorial(INT n)
+{
+    SE n IGUAL 0 ENTAO
+    {
+        RETORNA 1;
+    }
+    SENAO
+    {
+        RETORNA n * fatorial(n - 1);
+    }
+    FIMSE
+}
+
+INT numero RECEBE 5;
+INT resultado;
+resultado RECEBE fatorial(numero);
+IMPRIME "Fatorial de " + numero + " é " + resultado;

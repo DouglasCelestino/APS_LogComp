@@ -1,0 +1,31 @@
+INT a RECEBE 10, INT b RECEBE 20, INT resultado;
+
+FUNCAO INT somar(INT x, INT y) {
+    RETORNA x + y;
+}
+
+resultado RECEBE somar(a, b);
+
+IMPRIME "O resultado da soma é: " + resultado;
+
+# Loop enquanto
+INT contador RECEBE 1;
+ENQUANTO contador MENORIGUAL 5 FACA {
+    IMPRIME "Contador: " + contador;
+    contador RECEBE contador + 1;
+}
+FIMENQUANTO
+
+# Loop para
+PARA INT i DE 1 ATE 5 FACA {
+    IMPRIME "i = " + i;
+}
+FIMPARA
+
+# Condicional
+SE resultado MAIOR 100 ENTAO {
+    IMPRIME "Resultado é maior que 100";
+} SENAO {
+    IMPRIME "Resultado é menor ou igual a 100";
+}
+FIMSE

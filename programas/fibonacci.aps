@@ -1,0 +1,31 @@
+FUNCAO INT fibonacci(INT n)
+{
+    SE n MENORIGUAL 0 ENTAO
+    {
+        RETORNA 0;
+    }
+    SENAO
+    {
+        SE n IGUAL 1 ENTAO
+        {
+            RETORNA 1;
+        }
+        SENAO
+        {
+            RETORNA fibonacci(n - 1) + fibonacci(n - 2);
+        }
+        FIMSE
+    }
+    FIMSE
+}
+
+INT limite RECEBE 10;
+INT i RECEBE 0;
+
+ENQUANTO i MENOR limite FACA
+{
+    INT fib RECEBE fibonacci(i);
+    IMPRIME "Fibonacci(" + i + ") = " + fib;
+    i RECEBE i + 1;
+}
+FIMENQUANTO

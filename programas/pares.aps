@@ -1,0 +1,11 @@
+INT i RECEBE 1;
+ENQUANTO i MENORIGUAL 20 FACA
+{
+    SE (i / 2) * 2 IGUAL i ENTAO
+    {
+        IMPRIME i + " é par.";
+    }
+    FIMSE
+    i RECEBE i + 1;
+}
+FIMENQUANTO

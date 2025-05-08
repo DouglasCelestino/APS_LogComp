@@ -1,0 +1,8 @@
+FUNCAO STR cumprimentar(STR nome)
+{
+    RETORNA "Olá, " + nome + "!";
+}
+
+STR mensagem;
+mensagem RECEBE cumprimentar("Mundo");
+IMPRIME mensagem;

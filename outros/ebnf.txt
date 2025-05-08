@@ -1,0 +1,63 @@
+<Programa>          ::= { <Comando> }
+
+<Comando>           ::= <DeclaracaoVariavel> | <DeclaracaoFuncao> | <Atribuicao> | <Condicional> | <LoopEnquanto> | <LoopPara> | <Impressao> | <Leitura> | <Retorno> | <Comentario>
+
+<DeclaracaoVariavel> ::= <DeclaracaoUnica> { "," <DeclaracaoUnica> } ";"
+
+<DeclaracaoUnica>    ::= <Tipo> <Identificador> [ "RECEBE" <Expressao> ]
+
+<DeclaracaoFuncao> ::= "FUNCAO" <Tipo> <Identificador> "(" [ <ListaParametros> ] ")" <Bloco>
+
+<ListaParametros>   ::= <Parametro> { "," <Parametro> }
+
+<Parametro>         ::= <Tipo> <Identificador>
+
+<Tipo>              ::= "INT" | "STR" | "BOOL"
+
+<Atribuicao>        ::= <Identificador> "RECEBE" <Expressao> ";"
+
+<Condicional>       ::= "SE" <Condicao> "ENTAO" <Bloco> [ "SENAO" <Bloco> ] "FIMSE"
+
+<LoopEnquanto>      ::= "ENQUANTO" <Condicao> "FACA" <Bloco> "FIMENQUANTO"
+
+<LoopPara>          ::= "PARA" <Identificador> "DE" <Expressao> "ATE" <Expressao> [ "PASSO" <Expressao> ] "FACA" <Bloco> "FIMPARA"
+
+<Impressao>         ::= "IMPRIME" <Expressao> ";"
+
+<Leitura>           ::= "LEIA" <Identificador> ";"
+
+<Retorno>           ::= "RETORNA" <Expressao> ";"
+
+<Bloco>             ::= "{" { <Comando> } "}"
+
+<Expressao>         ::= <Termo> { ("+" | "-") <Termo> }
+
+<Termo>             ::= <Fator> { ("*" | "/") <Fator> }
+
+<Fator>             ::= <Número> | <String> | <Identificador> | "(" <Expressao> ")" | <ChamadaFuncao> | <OperadorUnario> <Fator>
+
+<ChamadaFuncao>     ::= <Identificador> "(" [ <ListaArgumentos> ] ")"
+
+<ListaArgumentos>   ::= <Expressao> { "," <Expressao> }
+
+<Condicao>          ::= <Expressao> <OperadorRelacional> <Expressao>
+
+<OperadorRelacional>::= "IGUAL" | "DIFERENTE" | "MAIOR" | "MENOR" | "MAIORIGUAL" | "MENORIGUAL"
+
+<OperadorUnario>    ::= "+" | "-" | "!"
+
+<Identificador>     ::= <Letra> { <Letra> | <Digito> | "_" }
+
+<Número>            ::= <Digito> { <Digito> }
+
+<String>            ::= '"' { <Caractere> } '"'
+
+<Comentario>        ::= "#" { <QualquerCaractereExcetoNovaLinha> }
+
+<Letra>             ::= "A" | ... | "Z" | "a" | ... | "z"
+
+<Digito>            ::= "0" | ... | "9"
+
+<QualquerCaractereExcetoNovaLinha> ::= qualquer caractere exceto "\n"
+
+<Caractere>         ::= qualquer caractere exceto '"'

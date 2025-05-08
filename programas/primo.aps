@@ -1,0 +1,32 @@
+FUNCAO BOOL ehPrimo(INT n)
+{
+    SE n MENOR 2 ENTAO
+    {
+        RETORNA 0;
+    }
+    FIMSE
+
+    INT i RECEBE 2;
+    ENQUANTO i MENOR n FACA
+    {
+        SE n % i IGUAL 0 ENTAO
+        {
+            RETORNA 0;
+        }
+        FIMSE
+        i RECEBE i + 1;
+    }
+    FIMENQUANTO
+    RETORNA 1;
+}
+
+INT numero RECEBE 17;
+SE ehPrimo(numero) IGUAL 1 ENTAO
+{
+    IMPRIME numero + " é primo.";
+}
+SENAO
+{
+    IMPRIME numero + " não é primo.";
+}
+FIMSE
